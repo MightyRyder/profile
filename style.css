@@ -1,0 +1,181 @@
+:root {
+	background-color: #050505;
+	color: white;
+	font-family: "Inter", system-ui, sans-serif;
+}
+
+/* map the radio buttons to a single master hue */
+body:has(#vibe-cyber:checked) {
+	--base-hue: 280;
+}
+body:has(#vibe-ethereal:checked) {
+	--base-hue: 160;
+}
+body:has(#vibe-inferno:checked) {
+	--base-hue: 35;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	--color-1: oklch(0.65 0.25 var(--base-hue));
+	--color-2: oklch(0.65 0.25 calc(var(--base-hue) + 120));
+	--color-3: oklch(0.65 0.25 calc(var(--base-hue) + 240));
+	--ambient-glow: oklch(from var(--color-1) 0.15 0.05 h);
+	background: radial-gradient(
+		circle at center,
+		var(--ambient-glow) 0%,
+		#050505 100%
+	);
+	transition: --base-hue 1s ease;
+}
+
+@property --base-hue {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 280;
+}
+
+/* mesh effect element */
+.fluid-mesh {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	filter: blur(80px);
+	z-index: 0;
+	opacity: 0.8;
+}
+
+.orb {
+	position: absolute;
+	width: 50vmin;
+	height: 50vmin;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	mix-blend-mode: screen;
+}
+
+/* Bind orbs */
+.orb-1 {
+	background: var(--color-1);
+	animation: orbit 12s ease-in-out infinite alternate;
+}
+.orb-2 {
+	background: var(--color-2);
+	animation: orbit 16s ease-in-out infinite alternate-reverse;
+}
+.orb-3 {
+	background: var(--color-3);
+	animation: orbit 20s linear infinite;
+}
+
+.glass-prism {
+	position: relative;
+	z-index: 10;
+	width: 400px;
+	padding: 3rem;
+	border-radius: 24px;
+	background: oklch(from var(--color-1) 0.2 0.02 h / 0.15);
+	backdrop-filter: blur(20px);
+	border: 1px solid oklch(from var(--color-1) 0.9 0.05 h / 0.3);
+	border-bottom-color: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 30px 60px color-mix(in oklab, var(--color-1) 20%, black);
+	transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass-prism:hover {
+	transform: translateY(-10px) scale(1.02);
+	border-color: oklch(from var(--color-1) 0.95 0.1 h / 0.6);
+}
+
+/* gradient text */
+.gradient-text {
+	font-size: 3rem;
+	margin: 0.5rem 0 1.5rem;
+	background: linear-gradient(135deg, var(--color-1), var(--color-2));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	line-height: 1.1;
+	letter-spacing: -1px;
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.25rem 0.75rem;
+	border-radius: 100px;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background: oklch(from var(--color-1) 0.8 0.1 h / 0.2);
+	color: oklch(from var(--color-1) 0.95 0.05 h);
+	border: 1px solid oklch(from var(--color-1) 0.8 0.1 h / 0.5);
+}
+
+/* controls */
+.controls {
+	display: flex;
+	gap: 1.5rem;
+	margin-top: 3rem;
+	justify-content: center;
+}
+
+.node {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.node::after {
+	content: attr(data-label);
+	position: absolute;
+	bottom: -25px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.75rem;
+	opacity: 0;
+	transition: opacity 0.3s;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.node:hover {
+	transform: scale(1.2);
+	border-color: white;
+}
+.node:hover::after {
+	opacity: 1;
+}
+
+/* Map active states to visually highlight the selected node */
+body:has(#vibe-cyber:checked) .node[for="vibe-cyber"],
+body:has(#vibe-ethereal:checked) .node[for="vibe-ethereal"],
+body:has(#vibe-inferno:checked) .node[for="vibe-inferno"] {
+	background: white;
+	box-shadow: 0 0 15px white;
+}
+
+@keyframes orbit {
+	0% {
+		transform: translate(calc(sin(0deg) * 20vw), calc(cos(0deg) * 20vh)) scale(1);
+	}
+	33% {
+		transform: translate(calc(sin(120deg) * 25vw), calc(cos(120deg) * 15vh))
+			scale(1.5);
+	}
+	66% {
+		transform: translate(calc(sin(240deg) * 15vw), calc(cos(240deg) * 25vh))
+			scale(0.8);
+	}
+	100% {
+		transform: translate(calc(sin(360deg) * 20vw), calc(cos(360deg) * 20vh))
+			scale(1);
+	}
+}
