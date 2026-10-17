@@ -57,7 +57,7 @@ body {
     align-items: center;
 }
 
-.button:hover {
+.button:active {
     background-color: rgb(87, 5, 96);
 }
 
