@@ -1,16 +1,32 @@
 body {
     background-color: black;
 }
+
+.image1 {
+    margin: 20px auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.header1{
+    color: white;
+    margin: 20px auto;
+    font-size: 32px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
 .box {
     border: 2px solid black;
+    background-color: white;
     border-radius: 5px;
     padding: 20px;
     width: 300px;
     text-wrap: pretty;
-    background-color: white;
 }
 .button {
     border: 2px solid black;
+    background-color: lightgreen;
     border-radius: 4px;
     height: 50px;
     width: 200px;
@@ -20,14 +36,14 @@ body {
     justify-content: center;
     display: grid;
     align-items: center;
-    background-color: lightgreen;
 }
 .button:hover {
     background-color: green;
 }
 .container {
     border: 2px solid black;
-    border-radius: 4px;
+    background-color: lightblue;
+    border-radius: 20px;
     height: auto;
     width: 600px;
     margin: 40px auto;
@@ -36,5 +52,4 @@ body {
     justify-content: center;
     display: grid;
     align-items: center;
-    background-color: lightblue;
 }
