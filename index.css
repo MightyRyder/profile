@@ -14,7 +14,7 @@ body {
     border-radius: 4px;
     height: 50px;
     width: 200px;
-    margin: 20 auto;
+    margin: 20px auto;
     font-size: 16px;
     font-family: sans-serif;
     justify-content: center;
@@ -22,12 +22,15 @@ body {
     align-items: center;
     background-color: lightgreen;
 }
+.button:hover {
+    background-color: green;
+}
 .container {
     border: 2px solid black;
     border-radius: 4px;
     height: auto;
     width: 600px;
-    margin: 40 auto;
+    margin: 40px auto;
     font-size: 16px;
     font-family: sans-serif;
     justify-content: center;

@@ -1,6 +1,6 @@
 const button = document.getElementById("button");
-const paragraph = document.getElementById("box");
+const paragraph = document.getElementById("container");
 
 button.addEventListener("click", () => {
-    paragraph.style.display = "red";
+    paragraph.textContent = "woah you just clicked the button";
 });
