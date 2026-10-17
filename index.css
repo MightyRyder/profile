@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(10, 1, 27);
 }
@@ -28,9 +32,10 @@ body {
     background-color: rgb(15, 3, 47);
     border-radius: 5px;
     padding: 20px;
+    text-wrap: pretty;
     width: 100%;
     max-width: 400px;
-    text-wrap: pretty;
+    margin: 0;
 }
 
 .button {
@@ -39,7 +44,6 @@ body {
     border-radius: 4px;
     height: 50px;
     width: 200px;
-    margin: 20px auto;
     font-size: 16px;
     font-family: sans-serif;
     justify-content: center;
@@ -54,14 +58,15 @@ body {
 .container {
     background-color: rgb(29, 9, 100);
     border-radius: 20px;
-    height: auto;
     width: 100%;
     max-width: 600px;
     margin: 40px auto;
     font-size: 16px;
     font-family: sans-serif;
     color: rgb(255, 255, 255);
-    justify-content: center;
-    display: grid;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: column;
     align-items: center;
 }
