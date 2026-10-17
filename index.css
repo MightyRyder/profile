@@ -76,3 +76,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+#spin {
+    position: relative; 
+    top: 0px;
+    rotate: 0deg;
+}
