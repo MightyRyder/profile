@@ -28,7 +28,8 @@ body {
     background-color: rgb(15, 3, 47);
     border-radius: 5px;
     padding: 20px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     text-wrap: pretty;
 }
 
@@ -54,7 +55,8 @@ body {
     background-color: rgb(29, 9, 100);
     border-radius: 20px;
     height: auto;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     margin: 40px auto;
     font-size: 16px;
     font-family: sans-serif;
