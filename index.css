@@ -6,6 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: sans-serif;
 }
 
 body {
@@ -22,7 +23,6 @@ body {
     color: rgb(255, 255, 255);
     margin: 6px;
     font-size: 32px;
-    font-family: sans-serif;
     text-align: center;
 }
 
@@ -30,7 +30,6 @@ body {
     color: rgb(150, 150, 150);
     margin: 6px;
     font-size: 20px;
-    font-family: sans-serif;
     text-align: center;
 }
 
@@ -38,7 +37,6 @@ body {
     background-color: rgb(15, 3, 47);
     border-radius: 5px;
     padding: 20px;
-    text-wrap: pretty;
     width: 100%;
     max-width: 400px;
     margin: 0;
@@ -51,7 +49,6 @@ body {
     height: 50px;
     width: 200px;
     font-size: 16px;
-    font-family: sans-serif;
     justify-content: center;
     display: grid;
     align-items: center;
@@ -66,15 +63,18 @@ body {
     border-radius: 20px;
     width: 100%;
     max-width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
     font-size: 16px;
-    font-family: sans-serif;
     color: rgb(255, 255, 255);
     display: flex;
     gap: 20px;
     padding: 20px;
     flex-direction: column;
     align-items: center;
+}
+
+.container.nobg {
+    background-color: transparent;
 }
 
 #spin {
