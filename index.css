@@ -52,6 +52,7 @@ body {
     justify-content: center;
     display: grid;
     align-items: center;
+    cursor: pointer;
 }
 
 .button:active {
@@ -75,6 +76,15 @@ body {
 
 .container.nobg {
     background-color: transparent;
+}
+
+.parent-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 #spin {
