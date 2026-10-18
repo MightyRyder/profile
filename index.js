@@ -17,8 +17,8 @@ function spin() {
     if (angleSpeed > 0) {
         angle += angleSpeed;
         button.style.rotate = (angle % 360) + "deg";
-        spinText.textContent = "woah you just clicked the button. the button is now at angle "+angle % 360;
-        statsText.textContent = "My first website 🥲🥲 angle speed: " + angleSpeed;
+        spinText.textContent = "Woah, you just clicked the button! The button is now at angle "+angle % 360;
+        statsText.textContent = "My first website 🥲🥲 Angle speed: " + angleSpeed;
     }
 }
 
