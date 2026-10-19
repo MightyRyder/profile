@@ -1,25 +1,25 @@
 const button = document.getElementById("button");
-const spinText = document.getElementById("spin");
-const statsText = document.getElementById("stats");
-let angle = 0;
-let angleSpeed = 0;
+const stats = document.getElementById("stats");
+let counter = 0;
 
 button.addEventListener("click", () => {
-    angleSpeed += 1;
-});
-
-function animate() {
-    spin();
-    requestAnimationFrame(animate);
-}
-
-function spin() {
-    if (angleSpeed > 0) {
-        angle += angleSpeed;
-        button.style.rotate = (angle % 360) + "deg";
-        spinText.textContent = "Woah, you just clicked the button! The button is now at angle "+angle % 360;
-        statsText.textContent = "My first website 🥲🥲 Angle speed: " + angleSpeed;
+    counter += 1;
+    if (counter > 0) {
+        button.textContent = "click me (" + counter + ")";
     }
-}
-
-animate();
+    if (counter > 50) {
+        button.style.top = (counter - 50) * 5 + "px";
+    }
+    if (counter > 100) {
+        stats.textContent = "ok im done no more button";
+        button.style.display = "none";
+    } else if (counter > 85) {
+        stats.textContent = "why do you keep clicking";
+    } else if (counter > 75) {
+        stats.textContent = "there's no special reward ";
+    } else if (counter > 65) {
+        stats.textContent = "look at it go";
+    } else if (counter > 55) {
+        stats.textContent = "oh shoot it's running away stop clicking it";
+    }
+});
