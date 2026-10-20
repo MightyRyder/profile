@@ -1,5 +1,10 @@
 const button = document.getElementById("button");
 const stats = document.getElementById("stats");
+
+const github = document.getElementById("button"); // todo something with later idk
+const discord = document.getElementById("stats"); // prolly like make buttons change color 
+const bsky = document.getElementById("button");   // depending on button hover
+
 let counter = 0;
 
 button.addEventListener("click", () => {
